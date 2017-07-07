@@ -325,7 +325,7 @@ std::unique_ptr<planner::AbstractPlan> CreateCopyPlan(
   }
 
   std::unique_ptr<planner::AbstractPlan> copy_plan(
-      new planner::CopyPlan(copy_stmt->file_path, deserialize_parameters));
+      new planner::CopyPlan(copy_stmt->file_path.get(), deserialize_parameters));
 
   auto target_table = catalog::Catalog::GetInstance()->GetTableWithName(
       copy_stmt->cpy_table->GetDatabaseName(), copy_stmt->cpy_table->GetTableName());
