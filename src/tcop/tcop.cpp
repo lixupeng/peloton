@@ -138,7 +138,6 @@ ResultType TrafficCop::ExecuteStatement(
   // Prepare the statement
   std::string unnamed_statement = "unnamed";
   auto statement = PrepareStatement(unnamed_statement, query, error_message);
-  LOG_DEBUG("After Return");
 
   if (statement.get() == nullptr) {
     rows_changed = 0;
